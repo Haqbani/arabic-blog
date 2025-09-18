@@ -1,30 +1,50 @@
 /**
- * Margin Notes for RTL Arabic Blog
- * Allows writing notes in the margins like a digital garden
+ * Minimal Margin Notes for RTL Arabic Blog
+ * Simple underlined text with margin notes - no fancy styling
  */
 
-/* Main content area with margins for notes */
+/* Main content area */
 .e-content.post {
   position: relative;
   margin: 0 auto;
 }
 
-/* Desktop: Enable margins for notes */
+/* Desktop: Enable space for margin notes */
 @media (min-width: 1200px) {
   body {
     max-width: 1200px !important;
   }
 
   .e-content.post {
-    margin-right: 280px;
+    margin-right: 300px;
+    margin-left: 50px;
+  }
+
+  /* Align article title and metadata with content */
+  article.post header {
+    margin-right: 300px;
+    margin-left: 50px;
   }
 }
 
-/* Margin note container */
+/* Simple underlined trigger text */
+.margin-trigger {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
+/* Remove the number references */
+.margin-trigger::after {
+  display: none;
+}
+
+/* Simple margin note */
 .margin-note {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #667;
   margin: 1rem 0;
 }
 
@@ -33,132 +53,86 @@
   .margin-note {
     position: absolute;
     width: 250px;
-    right: -270px; /* Position in right margin for RTL */
-    margin-top: 0;
+    right: -280px;
     text-align: right;
-    border-right: 2px solid #e0e0e0;
-    padding-right: 15px;
+    margin-top: -1.5rem; /* Align with trigger text */
   }
 
-  /* Left margin notes (less common in RTL) */
+  /* Prevent overlapping by adding minimum spacing */
+  .margin-note + .margin-note {
+    margin-top: 2rem;
+  }
+
+  /* Dynamic positioning will be handled by JavaScript */
+  .margin-note.positioned {
+    position: absolute;
+  }
+
+  /* Left margin notes (if needed) */
   .margin-note.left {
-    left: -270px;
+    left: -280px;
     right: auto;
     text-align: left;
-    border-left: 2px solid #e0e0e0;
-    border-right: none;
-    padding-left: 15px;
-    padding-right: 0;
   }
 }
 
-/* Mobile: Inline margin notes */
+/* Mobile: Simple inline notes */
 @media (max-width: 1199px) {
   .margin-note {
     display: block;
-    background: #f9f9f9;
-    border-right: 3px solid #d0d0d0;
-    padding: 10px 15px;
-    margin: 1rem 0;
-    border-radius: 4px;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #667;
   }
 
-  .margin-note::before {
-    content: "💭 ";
-    font-size: 1.1rem;
+  .margin-note.positioned {
+    position: static !important;
   }
 }
 
-/* Margin note trigger/reference */
-.margin-trigger {
-  color: #4a90e2;
-  font-weight: 500;
-  cursor: help;
-  text-decoration: none;
-  border-bottom: 1px dotted #4a90e2;
-  position: relative;
-}
-
-.margin-trigger:hover {
-  color: #2c5aa0;
-  border-bottom-style: solid;
-}
-
-/* Margin note styles */
-.margin-note.info {
-  color: #2196f3;
-  border-color: #2196f3;
-}
-
-.margin-note.thought {
-  color: #9c27b0;
-  border-color: #9c27b0;
-  font-style: italic;
-}
-
-.margin-note.reference {
-  color: #ff6b6b;
-  border-color: #ff6b6b;
-  font-size: 0.8rem;
-}
-
+/* Remove all fancy styling classes */
+.margin-note.info,
+.margin-note.thought,
+.margin-note.reference,
 .margin-note.quote {
-  color: #00796b;
-  border-color: #00796b;
-  quotes: """ """ "'" "'";
+  /* Reset to default */
+  color: #666;
+  border-color: transparent;
+  font-style: normal;
+  background: transparent;
 }
 
-.margin-note.quote::before {
-  content: open-quote;
-  font-size: 1.2em;
-  margin-left: 0.2em;
-}
-
+/* Remove quote styling */
+.margin-note.quote::before,
 .margin-note.quote::after {
-  content: close-quote;
-  font-size: 1.2em;
-  margin-right: 0.2em;
+  display: none;
 }
 
-/* Highlight connection between trigger and note */
+/* Remove ALL hover effects */
+.margin-trigger:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
 .margin-trigger:hover + .margin-note,
 .margin-note:hover {
-  background-color: rgba(74, 144, 226, 0.05);
-  border-color: #4a90e2;
-  transition: all 0.3s ease;
+  /* No changes on hover */
 }
 
-/* Number references for margin notes */
-.margin-trigger::after {
-  content: attr(data-note);
-  position: absolute;
-  top: -0.5em;
-  font-size: 0.7em;
-  color: #999;
-  margin-right: 0.2em;
-}
-
-/* Dark mode support */
+/* Dark mode - keep it simple */
 @media (prefers-color-scheme: dark) {
   .margin-note {
-    color: #aaa;
-    border-color: #555;
-  }
-
-  @media (max-width: 1199px) {
-    .margin-note {
-      background: #1a1a1a;
-      border-color: #444;
-    }
+    color: #999;
   }
 
   .margin-trigger {
-    color: #4da6ff;
-    border-color: #4da6ff;
-  }
-
-  .margin-trigger:hover {
-    color: #80bdff;
+    text-decoration-color: #666;
   }
 }
 
@@ -167,8 +141,9 @@
   .margin-note {
     display: block;
     margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-right: 2px solid #000;
-    page-break-inside: avoid;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    border-right: 1px solid #ddd;
+    padding-right: 0.5rem;
   }
 }
