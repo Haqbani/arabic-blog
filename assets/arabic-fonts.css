@@ -1,0 +1,181 @@
+/**
+ * Arabic Web Fonts Configuration
+ * Using Rubik as the primary font
+ */
+
+/* Font Family Variables - Rubik Only */
+:root {
+  /* Primary font - Rubik */
+  --arabic-font-body: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --arabic-font-heading: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --arabic-font-traditional: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --arabic-font-mixed: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Code font with Arabic support */
+  --arabic-font-code: 'Courier New', monospace;
+
+  /* Font sizes optimized for Arabic - Matching Water.css */
+  --arabic-font-size-base: 1rem;
+  --arabic-font-size-small: 0.875rem;
+  --arabic-font-size-large: 1.125rem;
+  --arabic-line-height-base: 1.7;
+  --arabic-line-height-heading: 1.4;
+
+  /* Letter spacing for better Arabic readability */
+  --arabic-letter-spacing: 0.01em;
+  --arabic-word-spacing: 0.08em;
+}
+
+/* Apply Rubik to ALL elements */
+* {
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+body, [lang="ar"], [dir="rtl"] {
+  font-family: var(--arabic-font-body);
+  font-size: var(--arabic-font-size-base);
+  line-height: var(--arabic-line-height-base);
+  letter-spacing: var(--arabic-letter-spacing);
+  word-spacing: var(--arabic-word-spacing);
+  direction: rtl;
+  /* Remove text-align to preserve centering */
+
+  /* Improve Arabic text rendering */
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-variant-ligatures: contextual;
+
+  /* Better Arabic font smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings in Arabic */
+h1, h2, h3, h4, h5, h6,
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3,
+[lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6,
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: var(--arabic-font-heading);
+  line-height: var(--arabic-line-height-heading);
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+/* Traditional Arabic styling for quotes and special content */
+blockquote,
+[lang="ar"] blockquote, [dir="rtl"] blockquote,
+[lang="ar"] .arabic-traditional, [dir="rtl"] .arabic-traditional {
+  font-family: var(--arabic-font-traditional);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: normal;
+  border-right: 3px solid #4a90e2;
+  border-left: none;
+  padding-right: 1rem;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+/* Code and preformatted text */
+[lang="ar"] code, [lang="ar"] pre, [lang="ar"] kbd, [lang="ar"] samp,
+[dir="rtl"] code, [dir="rtl"] pre, [dir="rtl"] kbd, [dir="rtl"] samp {
+  font-family: var(--arabic-font-code);
+  direction: ltr; /* Keep code LTR even in RTL context */
+  text-align: left;
+}
+
+/* Mixed content handling */
+.mixed-content, .bilingual {
+  font-family: var(--arabic-font-mixed);
+}
+
+/* Font size adjustments for different screen sizes */
+@media (max-width: 768px) {
+  [lang="ar"], [dir="rtl"], body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
+}
+
+@media (max-width: 480px) {
+  [lang="ar"], [dir="rtl"] {
+    font-size: calc(var(--arabic-font-size-base) * 0.9);
+    line-height: 1.6;
+  }
+}
+
+/* High DPI display optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  [lang="ar"], [dir="rtl"] {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print styles for Arabic */
+@media print {
+  *, body, [lang="ar"], [dir="rtl"] {
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    page-break-after: avoid;
+  }
+}
+
+/* Fix post excerpts spacing */
+.post-excerpt p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* Ensure proper RTL direction without breaking centering */
+.container, main, article, section {
+  direction: rtl;
+  /* Do not apply text-align to preserve Water.css centering */
+}
+
+/* Let RTL direction handle text flow naturally */
+article p, article li, section p, section li,
+.post-content, .post-meta, .post-excerpt {
+  /* Text flows RTL due to dir attribute */
+}
+
+/* Center specific elements */
+#title, #description, #navigation {
+  text-align: center !important;
+}
+
+/* Fix post meta spacing */
+.post-meta {
+  margin-bottom: 0.3rem;
+  font-size: 0.875rem;
+}
+
+/* Arabic numerals and English numerals handling */
+.arabic-numerals {
+  font-variant-numeric: normal;
+  unicode-bidi: embed;
+}
+
+.english-numerals {
+  font-variant-numeric: lining-nums;
+  unicode-bidi: embed;
+  direction: ltr;
+}

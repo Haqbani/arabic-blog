@@ -1,0 +1,475 @@
+/**
+ * Comprehensive RTL (Right-to-Left) CSS for Arabic Blogging
+ * Compatible with Water.css framework and Watery Jekyll theme
+ * Supports modern CSS logical properties and responsive design
+ */
+
+/* RTL Root Variables */
+:root {
+  /* Directional spacing variables */
+  --rtl-margin-start: 0;
+  --rtl-margin-end: auto;
+  --rtl-padding-start: 0;
+  --rtl-padding-end: 1rem;
+  --rtl-text-align: right;
+  --rtl-float-start: right;
+  --rtl-float-end: left;
+
+  /* RTL-specific measurements */
+  --rtl-border-radius-start: 0.25rem 0 0 0.25rem;
+  --rtl-border-radius-end: 0 0.25rem 0.25rem 0;
+
+  /* Shadows and transforms for RTL */
+  --rtl-box-shadow-start: -2px 0 4px rgba(0, 0, 0, 0.1);
+  --rtl-box-shadow-end: 2px 0 4px rgba(0, 0, 0, 0.1);
+  --rtl-transform-scale-x: -1;
+
+  /* Navigation and UI spacing */
+  --rtl-nav-padding: 0 1rem 0 0;
+  --rtl-dropdown-right: auto;
+  --rtl-dropdown-left: 0;
+}
+
+/* Base RTL Document Setup */
+html[dir="rtl"],
+html[lang="ar"] {
+  direction: rtl;
+}
+
+body[dir="rtl"],
+body.arabic {
+  direction: rtl;
+  /* Remove text-align from body to preserve Water.css centering */
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  /* Remove global text-align */
+  unicode-bidi: embed;
+}
+
+[lang="ar"] {
+  direction: rtl;
+  /* Remove global text-align */
+}
+
+/* Modern CSS Logical Properties (preferred approach) */
+[dir="rtl"], [lang="ar"] {
+  /* Use logical properties for future-proof RTL support */
+  text-align: right;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  padding-inline-start: 0;
+  padding-inline-end: 1rem;
+}
+
+/* Typography - No text-align to preserve centering */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3,
+[lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
+  /* Text flows RTL due to dir attribute */
+}
+
+[dir="rtl"] p, [dir="rtl"] li, [dir="rtl"] td, [dir="rtl"] th,
+[lang="ar"] p, [lang="ar"] li, [lang="ar"] td, [lang="ar"] th {
+  /* Text flows RTL due to dir attribute */
+}
+
+/* Centered content should remain centered */
+[dir="rtl"] .text-center, [lang="ar"] .text-center,
+[dir="rtl"] #title, [dir="rtl"] #description,
+[dir="rtl"] #navigation, [dir="rtl"] #author h3,
+[lang="ar"] #title, [lang="ar"] #description,
+[lang="ar"] #navigation, [lang="ar"] #author h3 {
+  text-align: center;
+}
+
+/* Lists and Indentation */
+[dir="rtl"] ul, [dir="rtl"] ol,
+[lang="ar"] ul, [lang="ar"] ol {
+  padding-inline-start: 0;
+  padding-inline-end: 2rem;
+  margin-inline-start: 0;
+  margin-inline-end: 1.5rem;
+}
+
+[dir="rtl"] li,
+[lang="ar"] li {
+  /* Text flows RTL due to dir attribute */
+}
+
+[dir="rtl"] ul ul, [dir="rtl"] ol ol,
+[lang="ar"] ul ul, [lang="ar"] ol ol {
+  margin-inline-end: 1rem;
+}
+
+/* Definition Lists */
+[dir="rtl"] dt, [lang="ar"] dt {
+  font-weight: bold;
+}
+
+[dir="rtl"] dd, [lang="ar"] dd {
+  margin-inline-start: 0;
+  margin-inline-end: 2rem;
+}
+
+/* Blockquotes */
+[dir="rtl"] blockquote, [lang="ar"] blockquote {
+  border-inline-start: none;
+  border-inline-end: 4px solid #ddd;
+  margin-inline-start: 0;
+  margin-inline-end: 1.5rem;
+  padding-inline-start: 0;
+  padding-inline-end: 1.5rem;
+}
+
+/* Tables */
+[dir="rtl"] table, [lang="ar"] table {
+  direction: rtl;
+}
+
+[dir="rtl"] th, [dir="rtl"] td,
+[lang="ar"] th, [lang="ar"] td {
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+}
+
+[dir="rtl"] th:first-child, [dir="rtl"] td:first-child,
+[lang="ar"] th:first-child, [lang="ar"] td:first-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+[dir="rtl"] th:last-child, [dir="rtl"] td:last-child,
+[lang="ar"] th:last-child, [lang="ar"] td:last-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+/* Forms */
+[dir="rtl"] input, [dir="rtl"] textarea, [dir="rtl"] select,
+[lang="ar"] input, [lang="ar"] textarea, [lang="ar"] select {
+  direction: rtl;
+}
+
+[dir="rtl"] input[type="email"], [dir="rtl"] input[type="url"],
+[dir="rtl"] input[type="tel"], [lang="ar"] input[type="email"],
+[lang="ar"] input[type="url"], [lang="ar"] input[type="tel"] {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="rtl"] label, [lang="ar"] label {
+  /* Text flows RTL due to dir attribute */
+}
+
+/* Form Layout */
+[dir="rtl"] .form-group label,
+[lang="ar"] .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+[dir="rtl"] button, [dir="rtl"] .button,
+[lang="ar"] button, [lang="ar"] .button {
+  /* Keep centered */
+}
+
+/* Navigation and Menus */
+[dir="rtl"] nav, [dir="rtl"] .nav,
+[lang="ar"] nav, [lang="ar"] .nav {
+  direction: rtl;
+}
+
+[dir="rtl"] nav ul, [dir="rtl"] .nav ul,
+[lang="ar"] nav ul, [lang="ar"] .nav ul {
+  padding-inline-start: 0;
+  margin-inline-start: 0;
+  list-style: none;
+}
+
+[dir="rtl"] nav li, [dir="rtl"] .nav li,
+[lang="ar"] nav li, [lang="ar"] .nav li {
+  display: inline-block;
+  margin-inline-end: 1rem;
+  margin-inline-start: 0;
+}
+
+[dir="rtl"] nav li:first-child, [dir="rtl"] .nav li:first-child,
+[lang="ar"] nav li:first-child, [lang="ar"] .nav li:first-child {
+  margin-inline-end: 0;
+}
+
+/* Dropdown Menus */
+[dir="rtl"] .dropdown, [lang="ar"] .dropdown {
+  position: relative;
+}
+
+[dir="rtl"] .dropdown-menu, [lang="ar"] .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* Watery Theme Specific RTL Adjustments */
+
+/* Header and Title */
+[dir="rtl"] #title a, [lang="ar"] #title a {
+  text-align: center;
+}
+
+/* Navigation */
+[dir="rtl"] #navigation, [lang="ar"] #navigation {
+  text-align: center;
+}
+
+[dir="rtl"] #navigation a, [lang="ar"] #navigation a {
+  margin: 0 0.5rem;
+}
+
+/* Author Card (h-card) */
+[dir="rtl"] #h-card, [lang="ar"] #h-card {
+  direction: rtl;
+}
+
+[dir="rtl"] #h-card img, [lang="ar"] #h-card img {
+  float: right;
+  padding-right: 0;
+  padding-left: 15px;
+  margin-top: -10px;
+}
+
+[dir="rtl"] #h-card h3, [lang="ar"] #h-card h3 {
+  text-align: center;
+}
+
+/* Social Links */
+[dir="rtl"] #social, [lang="ar"] #social {
+  text-align: left;
+}
+
+/* Pagination */
+[dir="rtl"] #pages, [lang="ar"] #pages {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] #current-page, [lang="ar"] #current-page {
+  padding: 0 15px;
+}
+
+/* Post Content */
+[dir="rtl"] .post-content, [lang="ar"] .post-content {
+  /* Text flows RTL due to dir attribute */
+}
+
+[dir="rtl"] .post-meta, [lang="ar"] .post-meta {
+  /* Text flows RTL due to dir attribute */
+}
+
+/* Code Blocks - Keep LTR for code */
+[dir="rtl"] pre, [dir="rtl"] code,
+[lang="ar"] pre, [lang="ar"] code {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: embed;
+}
+
+[dir="rtl"] pre, [lang="ar"] pre {
+  overflow-x: auto;
+}
+
+/* Inline code in RTL context */
+[dir="rtl"] p code, [dir="rtl"] li code,
+[lang="ar"] p code, [lang="ar"] li code {
+  direction: ltr;
+  unicode-bidi: embed;
+  display: inline-block;
+}
+
+/* Images and Media */
+[dir="rtl"] img, [lang="ar"] img {
+  max-width: 100%;
+  height: auto;
+}
+
+[dir="rtl"] figure, [lang="ar"] figure {
+  text-align: center;
+}
+
+[dir="rtl"] figcaption, [lang="ar"] figcaption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Image alignment classes */
+[dir="rtl"] .align-right, [lang="ar"] .align-right {
+  float: left;
+  margin: 0 1rem 1rem 0;
+}
+
+[dir="rtl"] .align-left, [lang="ar"] .align-left {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+/* Video and iframes */
+[dir="rtl"] iframe, [dir="rtl"] video,
+[lang="ar"] iframe, [lang="ar"] video {
+  max-width: 100%;
+}
+
+/* Accessibility - Skip Links */
+[dir="rtl"] .skip-main, [lang="ar"] .skip-main {
+  right: -999px;
+  left: auto;
+}
+
+[dir="rtl"] .skip-main:focus, [dir="rtl"] .skip-main:active,
+[lang="ar"] .skip-main:focus, [lang="ar"] .skip-main:active {
+  right: auto;
+  left: auto;
+  margin: 10px 35%;
+  text-align: center;
+}
+
+/* Responsive Design for RTL */
+@media (max-width: 768px) {
+  [dir="rtl"] #h-card img, [lang="ar"] #h-card img {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+    padding: 0;
+  }
+
+  [dir="rtl"] nav li, [dir="rtl"] .nav li,
+  [lang="ar"] nav li, [lang="ar"] .nav li {
+    display: block;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  [dir="rtl"] #social, [lang="ar"] #social {
+    text-align: center;
+  }
+
+  /* Stack elements vertically on mobile */
+  [dir="rtl"] .align-right, [dir="rtl"] .align-left,
+  [lang="ar"] .align-right, [lang="ar"] .align-left {
+    float: none;
+    display: block;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] #h-card, [lang="ar"] #h-card {
+    padding: 0 5px 15px;
+  }
+
+  [dir="rtl"] ul, [dir="rtl"] ol,
+  [lang="ar"] ul, [lang="ar"] ol {
+    padding-inline-end: 1.5rem;
+    margin-inline-end: 1rem;
+  }
+
+  [dir="rtl"] blockquote, [lang="ar"] blockquote {
+    margin-inline-end: 1rem;
+    padding-inline-end: 1rem;
+  }
+}
+
+/* Mixed Content Handling */
+.mixed-content {
+  /* For content with both Arabic and English */
+  direction: rtl;
+  text-align: start;
+  unicode-bidi: plaintext;
+}
+
+.ltr-embedded {
+  /* For LTR content within RTL context */
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: embed;
+  display: inline-block;
+}
+
+.rtl-embedded {
+  /* For RTL content within LTR context */
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: inline-block;
+}
+
+/* Language-specific adjustments */
+.lang-toggle {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.lang-toggle button {
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.lang-toggle button.active {
+  background: #007acc;
+  color: white;
+  border-color: #007acc;
+}
+
+/* Print Styles for RTL */
+@media print {
+  [dir="rtl"], [lang="ar"] {
+    direction: rtl;
+  }
+
+  [dir="rtl"] #h-card img, [lang="ar"] #h-card img {
+    float: right;
+    max-width: 100px;
+  }
+
+  [dir="rtl"] nav, [dir="rtl"] #social,
+  [lang="ar"] nav, [lang="ar"] #social {
+    display: none;
+  }
+}
+
+/* Dark Mode Compatibility */
+@media (prefers-color-scheme: dark) {
+  [dir="rtl"] blockquote, [lang="ar"] blockquote {
+    border-inline-end-color: #555;
+  }
+
+  .lang-toggle button {
+    background: #333;
+    border-color: #555;
+    color: #fff;
+  }
+
+  .lang-toggle button.active {
+    background: #0099ff;
+    border-color: #0099ff;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  [dir="rtl"] blockquote, [lang="ar"] blockquote {
+    border-inline-end-width: 6px;
+    border-inline-end-color: #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  [dir="rtl"] *, [lang="ar"] * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

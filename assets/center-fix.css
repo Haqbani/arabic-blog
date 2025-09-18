@@ -1,0 +1,56 @@
+/**
+ * Center Fix for RTL Layout
+ * Ensures content is centered like original Water.css while maintaining RTL text direction
+ */
+
+/* Ensure body gets Water.css centering */
+body {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 20px !important;
+}
+
+/* Ensure main content area is properly centered */
+main, #content {
+  margin: 0 auto;
+}
+
+/* RTL text direction without breaking centering */
+[dir="rtl"] {
+  direction: rtl;
+  /* Do NOT add text-align here */
+}
+
+/* Only for actual text content, apply RTL alignment */
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] blockquote,
+[dir="rtl"] .post-content,
+[dir="rtl"] .post-meta,
+[dir="rtl"] .post-excerpt {
+  text-align: right;
+}
+
+/* Keep centered elements centered */
+[dir="rtl"] #title,
+[dir="rtl"] #description,
+[dir="rtl"] #navigation,
+[dir="rtl"] #pages,
+[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+/* Ensure author card text aligns properly */
+[dir="rtl"] #h-card h3 {
+  text-align: center;
+}
+
+[dir="rtl"] #h-card p {
+  text-align: right;
+}

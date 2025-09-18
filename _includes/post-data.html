@@ -1,5 +1,5 @@
-<p>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+<p style="font-size: 0.9rem; color: #666;">
+        {%- assign date_format = site.minima.date_format | default: "%d/%m/%Y" -%}
         <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
             {{ page.date | date: date_format }}
         </time>
@@ -10,11 +10,11 @@
             {{ mdate | date: date_format }}
         </time>
         {%- endif -%}
-        &#8239; 
         {%- if page.author -%}
+        <span style="margin: 0 0.5rem;">|</span>
         {% for author in page.author %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            By: 
+            بقلم:
             <span itemprop="name" rel="author" class="p-author">
                 {{ author }}
             </span>
@@ -22,8 +22,10 @@
         {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
         {%- endif -%}
-        &#8239;|&#8239; 
+        {%- if page.tags.size > 0 -%}
+        <span style="margin: 0 0.5rem;">|</span>
         {%- for tag in page.tags -%}
-            <a class="p-category" href="{{ ('/tags/#' | append: tag) | relative_url }}">#{{ tag }}</a> &#8239; 
+            <a class="p-category" href="{{ ('/tags/#' | append: tag) | relative_url }}" style="margin-left: 0.3rem;">#{{ tag }}</a>
         {%- endfor -%}
+        {%- endif -%}
     </p>

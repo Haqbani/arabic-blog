@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Tags
+title: الوسوم
 permalink: /tags/
 content-type: eg
+lang: ar
+dir: rtl
 ---
 
 <style>

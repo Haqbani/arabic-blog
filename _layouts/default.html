@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="ar" dir="rtl">
 
 {%- include head.html -%}
 
-<body class="container">
+<body dir="rtl">
 
-    <a class="skip-main" href="#content">Skip to main content</a>
+    <a class="skip-main" href="#content">تخطي إلى المحتوى الرئيسي</a>
     <div id="top" class="page" role="document">
     {%- include header.html -%}
 
@@ -17,9 +17,6 @@
 
     {%- include footer.html -%}
     </div>
-    {%- if site.theme_switcher -%}
-    <script src="{{ '/assets/switcher.js' | relative_url }}" type="text/javascript"></script>
-    {%- endif -%}
 </body>
 
 </html>

@@ -1,3 +1,44 @@
+/**
+ * Watery Jekyll Theme - Enhanced with RTL Support
+ * Uses CSS custom properties for direction-aware styling
+ */
+
+/* CSS Custom Properties for Directional Support */
+:root {
+    /* Layout variables */
+    --text-align-start: left;
+    --text-align-end: right;
+    --float-start: left;
+    --float-end: right;
+    --margin-start: margin-left;
+    --margin-end: margin-right;
+    --padding-start: padding-left;
+    --padding-end: padding-right;
+    --border-start: border-left;
+    --border-end: border-right;
+
+    /* Spacing values */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+}
+
+/* RTL Override */
+[dir="rtl"] {
+    --text-align-start: right;
+    --text-align-end: left;
+    --float-start: right;
+    --float-end: left;
+    --margin-start: margin-right;
+    --margin-end: margin-left;
+    --padding-start: padding-right;
+    --padding-end: padding-left;
+    --border-start: border-right;
+    --border-end: border-left;
+}
+
 h1,
 figcaption,
 #description,
@@ -24,10 +65,17 @@ h2 {
 }
 
 #h-card img {
-    float: left;
+    float: var(--float-start);
     max-height: 150px;
     margin-top: -10px;
-    padding-right: 15px;
+    padding-inline-end: var(--spacing-md);
+}
+
+/* RTL-specific adjustment for h-card image */
+[dir="rtl"] #h-card img {
+    float: var(--float-start);
+    padding-inline-end: var(--spacing-md);
+    padding-inline-start: 0;
 }
 
 #h-card h3 {
@@ -44,12 +92,92 @@ h2 {
 }
 
 #social {
-    text-align: right;
+    text-align: var(--text-align-end);
+}
+
+/* RTL adjustment for social links */
+[dir="rtl"] #social {
+    text-align: var(--text-align-start);
+}
+
+/* Additional Theme Enhancements */
+
+/* Post content styling */
+.post-content {
+    line-height: 1.7;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: var(--spacing-md);
+}
+
+.post-title {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Enhanced navigation */
+#navigation a {
+    margin: 0 var(--spacing-xs);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+#navigation a:hover {
+    background-color: rgba(0, 123, 204, 0.1);
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+    #h-card {
+        text-align: center;
+    }
+
+    #h-card img {
+        float: none;
+        display: block;
+        margin: 0 auto var(--spacing-md);
+        padding: 0;
+    }
+
+    #social {
+        text-align: center;
+        margin-top: var(--spacing-md);
+    }
+}
+
+/* Language switcher */
+.language-switcher {
+    text-align: center;
+    margin: var(--spacing-md) 0;
+}
+
+.language-switcher button {
+    margin: 0 var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.language-switcher button:hover {
+    background: #e9e9e9;
+}
+
+.language-switcher button.active {
+    background: #007bcc;
+    color: white;
+    border-color: #007bcc;
 }
 
 /* ACCESSIBILITY */
 a.skip-main {
-    left: -999px;
+    inset-inline-start: -999px;
     position: absolute;
     top: auto;
     width: 1px;
@@ -62,16 +190,47 @@ a.skip-main:focus,
 a.skip-main:active {
     color: #fff;
     background-color: #000;
-    left: auto;
+    inset-inline-start: auto;
     top: auto;
     width: 30%;
     height: auto;
     overflow: auto;
     margin: 10px 35%;
-    padding: 5px;
+    padding: var(--spacing-xs);
     border-radius: 15px;
     border: 4px solid yellow;
     text-align: center;
     font-size: 1.2em;
     z-index: 999;
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+    .language-switcher button {
+        background: #333;
+        border-color: #555;
+        color: #fff;
+    }
+
+    .language-switcher button:hover {
+        background: #444;
+    }
+
+    .post-meta {
+        color: #aaa;
+    }
+}
+
+/* Print styles */
+@media print {
+    #navigation,
+    #social,
+    .language-switcher {
+        display: none;
+    }
+
+    .post-content {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
 }

@@ -1,0 +1,345 @@
+/**
+ * Custom Callouts and Code Block Styles
+ * Supports various callout types with RTL compatibility
+ */
+
+/* Code Block Styling */
+pre {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 1.5rem auto;
+  max-width: 90%;
+  direction: ltr !important;
+  text-align: left !important;
+  border: 1px solid #e1e4e8;
+}
+
+[dir="rtl"] pre {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+code {
+  background-color: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.875em;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Syntax Highlighting Improvements */
+.highlight {
+  background: #f6f8fa;
+  border-radius: 6px;
+  margin: 1.5rem auto;
+  max-width: 90%;
+}
+
+.highlight pre {
+  margin: 0;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  max-width: 100%;
+}
+
+/* Base Callout/Blockquote Styling */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+[dir="rtl"] blockquote {
+  border-right: 4px solid #4a90e2;
+  border-left: none;
+  padding-right: 1.5rem;
+  padding-left: 1rem;
+  text-align: right;
+}
+
+/* Custom Callout Types */
+
+/* Note/Info Callout */
+blockquote.note,
+blockquote.info {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+}
+
+blockquote.note::before,
+blockquote.info::before {
+  content: "💡";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.note::before,
+[dir="rtl"] blockquote.info::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Warning Callout */
+blockquote.warning,
+blockquote.caution {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+blockquote.warning::before,
+blockquote.caution::before {
+  content: "⚠️";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.warning::before,
+[dir="rtl"] blockquote.caution::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Danger/Error Callout */
+blockquote.danger,
+blockquote.error {
+  background-color: #ffebee;
+  border-color: #f44336;
+}
+
+blockquote.danger::before,
+blockquote.error::before {
+  content: "❌";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.danger::before,
+[dir="rtl"] blockquote.error::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Success Callout */
+blockquote.success,
+blockquote.tip {
+  background-color: #e8f5e9;
+  border-color: #4caf50;
+}
+
+blockquote.success::before,
+blockquote.tip::before {
+  content: "✅";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.success::before,
+[dir="rtl"] blockquote.tip::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Important Callout */
+blockquote.important {
+  background-color: #f3e5f5;
+  border-color: #9c27b0;
+}
+
+blockquote.important::before {
+  content: "⭐";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.important::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Question Callout */
+blockquote.question {
+  background-color: #e0f2f1;
+  border-color: #009688;
+}
+
+blockquote.question::before {
+  content: "❓";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.question::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Example Callout */
+blockquote.example {
+  background-color: #fce4ec;
+  border-color: #e91e63;
+}
+
+blockquote.example::before {
+  content: "📝";
+  position: absolute;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+[dir="rtl"] blockquote.example::before {
+  right: -0.5rem;
+  left: auto;
+}
+
+/* Quote Callout (Traditional Quote) */
+blockquote.quote {
+  background-color: #f5f5f5;
+  border-color: #757575;
+  font-style: italic;
+}
+
+blockquote.quote::before {
+  content: """;
+  position: absolute;
+  top: 0.5rem;
+  font-size: 2rem;
+  color: #757575;
+  font-family: Georgia, serif;
+}
+
+blockquote.quote::after {
+  content: """;
+  position: absolute;
+  bottom: 0.5rem;
+  font-size: 2rem;
+  color: #757575;
+  font-family: Georgia, serif;
+}
+
+[dir="rtl"] blockquote.quote::before {
+  right: 0.5rem;
+  left: auto;
+}
+
+[dir="rtl"] blockquote.quote::after {
+  left: 0.5rem;
+  right: auto;
+}
+
+/* Callout Headers */
+blockquote strong:first-child {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Nested Lists in Callouts */
+blockquote ul,
+blockquote ol {
+  margin: 0.5rem 0;
+  padding-inline-start: 1.5rem;
+}
+
+/* Code inside Callouts */
+blockquote code {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  blockquote {
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+
+  blockquote::before {
+    position: static;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  pre {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  pre {
+    background-color: #161b22;
+    border-color: #30363d;
+    color: #e1e4e8;
+  }
+
+  code {
+    background-color: #161b22;
+    color: #e1e4e8;
+  }
+
+  blockquote {
+    background-color: #1c2128;
+    color: #e1e4e8;
+  }
+
+  blockquote.note,
+  blockquote.info {
+    background-color: #0d47a1;
+  }
+
+  blockquote.warning,
+  blockquote.caution {
+    background-color: #5d4037;
+  }
+
+  blockquote.danger,
+  blockquote.error {
+    background-color: #5d1f1f;
+  }
+
+  blockquote.success,
+  blockquote.tip {
+    background-color: #1b5e20;
+  }
+
+  blockquote.important {
+    background-color: #4a148c;
+  }
+
+  blockquote.question {
+    background-color: #004d40;
+  }
+
+  blockquote.example {
+    background-color: #880e4f;
+  }
+
+  blockquote.quote {
+    background-color: #212121;
+  }
+}

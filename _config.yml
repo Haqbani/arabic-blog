@@ -18,30 +18,31 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Watery Theme for Jekyll 🚰
-email: mail@brennanbrown.ca
+# Arabic Site Configuration
+lang: ar
+direction: rtl
+dir: rtl
+
+title: مدونتي العربية
+email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A minimalist, bare-bones theme for Jekyll only using the Water.css
-  framework while still following the best practices possible for
-  accessibility and search-engine optimization.
+  مدونة عربية حديثة باستخدام Jekyll مع دعم كامل للغة العربية
+  والكتابة من اليمين إلى اليسار. تصميم أنيق وبسيط للمحتوى العربي.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://watery.netlify.app" # the base hostname & protocol for your site, e.g. http://example.com
-repository: brennanbrown/watery
-twitter: brennankbrown
-github: brennanbrown
+url: "http://localhost:4000" # the base hostname & protocol for your site
+repository: yourusername/arabic-blog
+twitter: yourusername
+github: yourusername
 
 google_analytics:
-comments: true
-disqus: watery-jekyll
+comments: false
+disqus:
 
-author: Brennan K. Brown
+author: محمد الحقباني
 author_bio: >-
-  Hey there! 😄 My name is Brennan, I'm a 27-year-old Métis web developer and 
-  content strategist from Winnipeg, Manitoba and currently reside in Calgary, 
-  Alberta. I've recently compeleted a Full Stack Developer Program at EvolveU, 
-  and I'm looking to help those that need web development work done, or 
-  searching for ideas and management for their next content project.
-author_pic: https://brennanbrown.ca/img/avatar.png
+  مرحباً! أنا محمد، كاتب ومطور ويب متخصص في إنشاء المحتوى العربي الرقمي.
+  أشارك هنا أفكاري وتجاربي في البرمجة والتقنية والثقافة العربية.
+author_pic: https://via.placeholder.com/150
 
 paginate: 4
 paginate_path: "/:num/"
@@ -74,7 +75,7 @@ permalink: /:title
 #   permalink: "/page/:num/"
 #   title: ":title - page :num"
 
-theme_switcher: true
+theme_switcher: false
 
 # Allows all pages to be put into `_pages` folder
 # for easier navigation and better SEO.

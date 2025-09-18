@@ -1,0 +1,12 @@
+/**
+ * Homepage Title Styling
+ * Makes article titles non-bold on the homepage
+ */
+
+.post-preview h2 {
+  font-weight: normal !important;
+}
+
+.post-preview h2 a {
+  font-weight: normal !important;
+}

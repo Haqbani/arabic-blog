@@ -8,14 +8,14 @@
 
     <hr/>
     <nav id="navigation">
-        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/' | relative_url }}">الرئيسية</a>
         /
         {% assign nav_pages = site.pages | where_exp: 'p', 'p.title' | where_exp: 'p', 'p.nav_exclude != true' | sort: 'title' %}
         {% for page in nav_pages %}
             <a href="{{ page.url | relative_url }}">{{page.title}}</a>
             /
         {% endfor %}
-        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        <a href="{{ '/feed.xml' | relative_url }}">خلاصة RSS</a>
     </nav>
     <hr/>
 </header>
