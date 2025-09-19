@@ -1,0 +1,106 @@
+/**
+ * Centered Layout - 931px width including margin notes
+ * All content centered with consistent width
+ */
+
+/* Main container for all pages */
+body {
+  max-width: 931px !important;
+  margin: 0 auto !important;
+  padding: 0 20px;
+}
+
+/* Reset Water.css max-width */
+body > * {
+  max-width: none !important;
+}
+
+/* Main content area */
+main {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Article content with margin notes */
+.e-content.post {
+  max-width: 631px; /* 931px - 300px for margin space */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Article headers alignment */
+article.post header {
+  max-width: 631px;
+  margin: 0 auto 2rem;
+}
+
+/* Desktop: Content centering */
+@media (min-width: 1200px) {
+  /* Center the content with space for margin notes */
+  .e-content.post {
+    max-width: 631px;
+    margin: 0 auto;
+    padding-right: 300px; /* Space for margin notes */
+  }
+
+  article.post header {
+    max-width: 631px;
+    margin: 0 auto;
+    padding-right: 300px; /* Align with content */
+  }
+}
+
+/* Tablet and below: center everything */
+@media (max-width: 1199px) {
+  body {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .e-content.post,
+  article.post header {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Home page and list pages */
+.post-list,
+.page-content {
+  max-width: 631px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+#navigation {
+  max-width: 631px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header and footer */
+header.site-header,
+footer.site-footer {
+  max-width: 631px;
+  margin: 0 auto;
+}
+
+/* Ensure consistent spacing */
+#title,
+#description {
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Print styles */
+@media print {
+  body {
+    max-width: 100%;
+  }
+
+  .e-content.post,
+  article.post header {
+    max-width: 100%;
+    margin: 0;
+  }
+}

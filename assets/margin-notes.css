@@ -9,23 +9,13 @@
   margin: 0 auto;
 }
 
-/* Desktop: Enable space for margin notes */
-@media (min-width: 1200px) {
-  body {
-    max-width: 1200px !important;
-  }
-
-  .e-content.post {
-    margin-right: 300px;
-    margin-left: 50px;
-  }
-
-  /* Align article title and metadata with content */
-  article.post header {
-    margin-right: 300px;
-    margin-left: 50px;
-  }
+/* Ensure article has positioning context */
+article.post {
+  position: relative;
 }
+
+/* Desktop: Enable space for margin notes */
+/* Removed - now handled by centered-layout.css */
 
 /* Simple underlined trigger text */
 .margin-trigger {
@@ -33,6 +23,9 @@
   text-decoration-style: dotted;
   text-underline-offset: 2px;
   cursor: help;
+  /* Ensure inline positioning for precise measurements */
+  display: inline;
+  position: relative;
 }
 
 /* Remove the number references */
@@ -46,26 +39,29 @@
   line-height: 1.4;
   color: #667;
   margin: 1rem 0;
+  /* Ensure proper text rendering for Arabic */
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Desktop margin notes positioning */
 @media (min-width: 1200px) {
+  /* Default positioning */
   .margin-note {
     position: absolute;
     width: 250px;
     right: -280px;
     text-align: right;
-    margin-top: -1.5rem; /* Align with trigger text */
+    margin: 0;
+    color: #667;
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 
-  /* Prevent overlapping by adding minimum spacing */
-  .margin-note + .margin-note {
-    margin-top: 2rem;
-  }
-
-  /* Dynamic positioning will be handled by JavaScript */
+  /* When positioned by JavaScript */
   .margin-note.positioned {
-    position: absolute;
+    /* JavaScript updates the top position */
   }
 
   /* Left margin notes (if needed) */
@@ -73,6 +69,20 @@
     left: -280px;
     right: auto;
     text-align: left;
+  }
+
+  /* Ensure trigger elements maintain precise inline positioning */
+  .margin-trigger {
+    position: relative;
+    display: inline;
+    /* Prevent any layout shifts */
+    vertical-align: baseline;
+  }
+
+  /* Container should not interfere with positioning */
+  .e-content.post {
+    /* Ensure container doesn't add unexpected offsets */
+    box-sizing: border-box;
   }
 }
 

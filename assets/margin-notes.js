@@ -17,12 +17,19 @@
       const trigger = note.previousElementSibling;
       if (!trigger || !trigger.classList.contains('margin-trigger')) return;
 
-      // Get trigger position
+      // Get the trigger's position
       const triggerRect = trigger.getBoundingClientRect();
-      const triggerTop = triggerRect.top + window.scrollY;
+      const container = document.querySelector('.e-content.post');
+      const containerRect = container.getBoundingClientRect();
 
-      // Calculate desired position (aligned with trigger)
-      let desiredTop = triggerTop;
+      // Calculate position relative to container
+      // Subtract line height to align with text baseline
+      const computedStyle = window.getComputedStyle(trigger);
+      const lineHeight = parseFloat(computedStyle.lineHeight) || 20;
+      const relativeTop = triggerRect.top - containerRect.top - (lineHeight * 0.15);
+
+      // Set desired position aligned with trigger text line
+      let desiredTop = relativeTop;
 
       // Check for overlap with previous note
       if (lastNoteBottom > 0 && desiredTop < lastNoteBottom + minSpacing) {
@@ -31,7 +38,11 @@
 
       // Apply positioning
       note.classList.add('positioned');
+      note.style.position = 'absolute';
+      note.style.width = '250px';
+      note.style.right = '-280px';
       note.style.top = desiredTop + 'px';
+      note.style.textAlign = 'right';
 
       // Update last note bottom position
       const noteHeight = note.offsetHeight;

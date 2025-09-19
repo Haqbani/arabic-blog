@@ -1,0 +1,82 @@
+/**
+ * Tufte-style margin notes for RTL Arabic blog
+ * Based on Edward Tufte's proven implementation
+ */
+
+/* Main content area - ensure proper width */
+.e-content.post {
+  max-width: 631px;
+  margin: 0 auto;
+  position: relative;
+}
+
+article.post {
+  position: relative;
+}
+
+/* Simple underlined trigger text */
+.margin-trigger {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
+/* Margin notes - Tufte style with float */
+.margin-note {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #667;
+}
+
+/* Desktop: Float notes into margin */
+@media (min-width: 1200px) {
+  .margin-note {
+    float: right;
+    clear: right;
+    margin-right: -300px; /* Push into right margin */
+    width: 250px;
+    margin-top: 0.3rem; /* Tufte's baseline adjustment */
+    margin-bottom: 0;
+    text-align: right;
+    vertical-align: baseline;
+    position: relative;
+  }
+}
+
+/* Mobile: Inline blocks */
+@media (max-width: 1199px) {
+  .margin-note {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #667;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .margin-note {
+    color: #999;
+  }
+
+  .margin-trigger {
+    text-decoration-color: #666;
+  }
+}
+
+/* Print styles */
+@media print {
+  .margin-note {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    border-right: 1px solid #ddd;
+    padding-right: 0.5rem;
+  }
+}
