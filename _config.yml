@@ -23,14 +23,14 @@ lang: ar
 direction: rtl
 dir: rtl
 
-title: مدونتي العربية
+title: سنام
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   مدونة عربية حديثة باستخدام Jekyll مع دعم كامل للغة العربية
   والكتابة من اليمين إلى اليسار. تصميم أنيق وبسيط للمحتوى العربي.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://localhost:4000" # the base hostname & protocol for your site
-repository: yourusername/arabic-blog
+url: "https://haqbani.github.io/snaam" # the base hostname & protocol for your site
+repository: Haqbani/snaam
 twitter: yourusername
 github: yourusername
 

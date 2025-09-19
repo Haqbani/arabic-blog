@@ -1,0 +1,47 @@
+/**
+ * Custom font for blog title only
+ * Using Daken font family
+ */
+
+/* Font face definitions for Daken font */
+@font-face {
+  font-family: 'Daken';
+  src: url('/fonts/DakenVF.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Daken';
+  src: url('/fonts/Daken-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Daken';
+  src: url('/fonts/Daken-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Daken';
+  src: url('/fonts/Daken-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Apply Daken font to blog title only */
+#title,
+#title a,
+h1#title {
+  font-family: 'Daken', serif !important;
+  font-weight: 900; /* Use Black weight for bold appearance */
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+}
