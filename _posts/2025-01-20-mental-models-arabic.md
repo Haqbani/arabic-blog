@@ -18,7 +18,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 
 في مفهوم جميل في الـ Zen اسمه <span class="margin-trigger">"شوشين"</span><span class="margin-note">Shoshin يعني "عقل المبتدئ" - رؤية الأشياء بعيون جديدة حتى لو كنت خبير</span> أو beginner's mind.
 
-من قراءاتي في Readwise، لقيت quote مذهل: "في عقل المبتدئ هناك احتمالات كثيرة، في عقل الخبير هناك احتمالات قليلة."
+زي ما قال <span class="margin-trigger">Shunryu Suzuki</span><span class="margin-note">من كتاب "Zen Mind, Beginner's Mind"</span>: "في عقل المبتدئ هناك احتمالات كثيرة، في عقل الخبير هناك احتمالات قليلة."
 
 يعني إيش؟ الخبير يشوف patterns في كل مكان، لكن أحياناً هذي الـ patterns تعميه عن الحلول الجديدة. زي شركة Kodak اللي كانت خبيرة في التصوير الفيلمي لدرجة إنها ما شافت إن الـ digital photography بيقضي عليها.
 
@@ -26,7 +26,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 
 ## كيف نخلي أفكارنا واضحة؟ الـ V2MOM Framework
 
-مارك بينيوف، مؤسس Salesforce، عنده framework بسيط بس قوي اسمه <span class="margin-trigger">V2MOM</span><span class="margin-note">Vision, Values, Methods, Obstacles, Measures</span>.
+مارك بينيوف، مؤسس Salesforce، عنده framework بسيط بس قوي اسمه <span class="margin-trigger">V2MOM</span><span class="margin-note">من كتابه "Behind the Cloud" - Vision, Values, Methods, Obstacles, Measures</span>.
 
 خلينا نشوف كيف يشتغل:
 
@@ -43,7 +43,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 - Values: السرعة، الأمانة، رضا العميل
 - Methods: شراكات مع مطاعم، تطبيق سهل، سائقين مدربين
 
-الجميل إن <span class="margin-trigger">الـ subjective judgment ما يكفي</span><span class="margin-note">لازم data ومقاييس واضحة عشان تعرف متى نجحت</span>. لازم metrics واضحة.
+الجميل إن <span class="margin-trigger">الـ subjective judgment ما يكفي</span><span class="margin-note">حسب Marc Benioff: لازم data ومقاييس واضحة عشان تعرف متى نجحت</span>. لازم metrics واضحة.
 
 ## لو شركتك اختفت بكرة، مين راح يحزن عليها؟
 
@@ -51,7 +51,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 
 اسأل نفسك: لو شركتك أو منتجك اختفى، هل أحد راح يقدر يعوضه perfectly؟ لو الجواب نعم، فأنت في مشكلة.
 
-من قراءاتي، الميزة التنافسية تجي من طريقتين:
+حسب <span class="margin-trigger">Michael Porter</span><span class="margin-note">من "Competitive Advantage" - Harvard Business School</span>، الميزة التنافسية تجي من طريقتين:
 
 **الطريقة الأولى: Differentiation**
 زي Apple. العميل مستعد يدفع أكثر بكثير للـ iPhone رغم إن التكلفة الإضافية للشركة مش كبيرة.
@@ -75,7 +75,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 
 كثير ناس يعتقدوا إن Agile بس لتطوير software. غلط.
 
-شركة Bosch (400 ألف موظف!) جربت تطبق Agile في كل الأقسام. أول محاولة فشلت ليش؟ لأنهم خلوا بعض الأقسام agile وبعضها traditional. <span class="margin-trigger">صار friction رهيب</span><span class="margin-note">الأقسام الرشيقة تصطدم بالبيروقراطية في الأقسام التقليدية</span>.
+شركة Bosch (400 ألف موظف!) جربت تطبق Agile في كل الأقسام. <span class="margin-trigger">حسب Harvard Business Review</span><span class="margin-note">من مقال "Agile at Scale" - Darrell Rigby et al.</span>، أول محاولة فشلت ليش؟ لأنهم خلوا بعض الأقسام agile وبعضها traditional. صار friction رهيب - الأقسام الرشيقة تصطدم بالبيروقراطية في الأقسام التقليدية.
 
 الحل؟ ما كل شيء يحتاج يكون agile team، بس كل شيء يحتاج agile mindset.
 
@@ -89,7 +89,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 
 ## الصخور والرمل: ليش التفاصيل الصغيرة تفرق؟
 
-في مفهوم حلو في الـ software development: <span class="margin-trigger">Rocks, Pebbles, and Sand</span><span class="margin-note">الصخور = مشاريع كبيرة، الحصى = مهام متوسطة، الرمل = تحسينات صغيرة</span>.
+في مفهوم حلو من <span class="margin-trigger">Jason Cohen</span><span class="margin-note">مؤسس WP Engine - من مقاله "Rocks, Pebbles, Sand"</span> في software development: Rocks, Pebbles, and Sand. الصخور = مشاريع كبيرة، الحصى = مهام متوسطة، الرمل = تحسينات صغيرة.
 
 معظمنا يركز على الـ Rocks (المشاريع الكبيرة). بس تدري وش اللي يخلي الناس يقولوا "واو، هذا التطبيق رهيب"؟ الرمل!
 
@@ -99,7 +99,7 @@ excerpt: "تخيل نفسك في meeting مهم، والمدير يسألك: 'إ
 
 ## متى تكون بطيء ومتى تكون سريع؟
 
-هنا نقطة مهمة من قراءاتي: <span class="margin-trigger">"Some decisions should be slow"</span><span class="margin-note">القرارات الاستراتيجية تحتاج تأني، التنفيذ يحتاج سرعة</span>.
+هنا نقطة مهمة من <span class="margin-trigger">Jason Cohen</span><span class="margin-note">من "Decisions: Fast vs. Slow" - A Smart Bear blog</span>: "Some decisions should be slow." القرارات الاستراتيجية تحتاج تأني، التنفيذ يحتاج سرعة.
 
 تخيل إنك تبي تتسلق جبل. القرار "أي جبل نتسلق؟" لازم يكون slow ومدروس. بس بمجرد ما تقرر، طريقة التسلق (التنفيذ) لازم تكون agile.
 
